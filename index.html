@@ -86,16 +86,28 @@
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
+            justify-content: center; /* Center the grid contents */
         }
 
         .movie-card {
-            width: 200px;
+            width: 200px; /* Fixed width */
+            height: 350px; /* Fixed height for uniformity, still rectangular */
             cursor: pointer;
+            display: flex;
+            flex-direction: column; /* Ensure title is below the image */
+            align-items: center; /* Center content in the card */
         }
 
         .movie-card img {
             width: 100%;
+            height: 250px; /* Increase the height for the image */
             border-radius: 5px;
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+        }
+
+        .movie-card h3 {
+            text-align: center; /* Center the title */
+            margin-top: 10px; /* Space between image and title */
         }
 
         footer {
@@ -157,8 +169,8 @@
         .request-section {
             display: none; /* Initially hidden */
             padding: 50px;
-            background: url('https://giffiles.alphacoders.com/820/820.gif') no-repeat center center fixed; /* Allow easy background image change */
-            background-size: cover; /* Ensure it covers the entire section */
+            background: url('https://giffiles.alphacoders.com/820/820.gif') no-repeat center center fixed; /* Easy background image change */
+            background-size: cover;
             height: 100vh;
             position: relative;
             box-shadow: 0 0 50px darkred; /* Glowing effect around the section */
@@ -226,17 +238,17 @@
                         <img src="https://upload.wikimedia.org/wikipedia/en/9/91/The_Garfield_Movie_2024_poster.jpg" alt="Movie 1">
                         <h3>Garfeild Movie 2024</h3>
                     </div>
-                    <div class="movie-card" data-url="http://www.example.com">
-                        <img src="https://via.placeholder.com/200x300?text=Movie+2" alt="Movie 2">
-                        <h3>Movie 2</h3>
+                    <div class="movie-card" data-url="https://drive.google.com/file/d/14_s96ZSrnA-14ORKnLGFAvRX3zZsQhMU/preview">
+                        <img src="https://placewise.imgix.net/movies/images/MV021289940000.jpg" alt="Movie 2">
+                        <h3>Twisters</h3>
                     </div>
-                    <div class="movie-card" data-url="http://www.example.com">
-                        <img src="https://via.placeholder.com/200x300?text=Movie+3" alt="Movie 3">
-                        <h3>Movie 3</h3>
+                    <div class="movie-card" data-url="https://drive.google.com/file/d/1HaXeNylNfZXhRudGTNLUWtrN-oAmone4/preview">
+                        <img src="https://www.hollywoodreporter.com/wp-content/uploads/2018/12/sonic_the_hedgehog_poster-publicity-h_2018.jpg?w=1296&h=730&crop=1" alt="Movie 3">
+                        <h3>Sonic The Hedgehog</h3>
                     </div>
-                    <div class="movie-card" data-url="http://www.example.com">
-                        <img src="https://via.placeholder.com/200x300?text=Movie+4" alt="Movie 4">
-                        <h3>Movie 4</h3>
+                    <div class="movie-card" data-url="https://drive.google.com/file/d/13YPdlfR1BTzXfqwmfbzfiuPycjQsh0Yb/preview">
+                        <img src="https://th.bing.com/th/id/R.7d54e2baa735d1e272e83d2f3cd5b78f?rik=38LAv2l1ms8vcQ&riu=http%3a%2f%2fwww.impawards.com%2f2022%2fposters%2fsonic_the_hedgehog_two_ver23_xlg.jpg&ehk=NdpZ3%2fFzFlVE1xJf6SKiSJNk%2feDX9ImPSMS10O4q%2b8E%3d&risl=&pid=ImgRaw&r=0" alt="Movie 4">
+                        <h3>Sonic 2</h3>
                     </div>
                 </div>
             </section>
@@ -254,13 +266,13 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 NetFlow. All rights reserved.</p>
+        <p>© 2024 NetFlow. All rights reserved.</p>
     </footer>
 
     <!-- Modal -->
     <div id="myModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close">×</span>
             <iframe id="modal-iframe" src=""></iframe>
         </div>
     </div>
