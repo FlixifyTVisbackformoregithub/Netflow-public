@@ -1,8 +1,8 @@
 <link rel="shortcut icon" type="image/png" href="https://i.ibb.co/QFH0DN8/NET.png">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<hh_fake_doctype> html</hh_fake_doctype>
+<hh_fake_tag_name_html lang="en">
+<hh_fake_tag_name_head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flixfy</title>
@@ -68,7 +68,31 @@
         }
 
         .banner h1 {
-            font-size: 48px;
+            font-size: 64px; /* Increased font size for better visibility */
+            color: red; /* Color of the title */
+            animation: sparkle 2s infinite; /* Sparkling effect */
+            transform: rotate(-3deg); /* Create a slight arch */
+            text-shadow: 
+                0 0 5px rgba(255, 69, 0, 1),
+                0 0 10px rgba(255, 69, 0, 0.8),
+                0 0 15px rgba(255, 69, 0, 0.6),
+                0 0 20px rgba(255, 69, 0, 0.4),
+                0 0 30px rgba(255, 69, 0, 0.2);
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                text-shadow: 
+                    0 0 5px rgba(255, 69, 0, 0.5),
+                    0 0 10px rgba(255, 69, 0, 0.4),
+                    0 0 15px rgba(255, 69, 0, 0.3);
+            }
+            50% {
+                text-shadow: 
+                    0 0 20px rgba(255, 0, 0, 1),
+                    0 0 25px rgba(255, 0, 0, 0.8),
+                    0 0 30px rgba(255, 0, 0, 0.6);
+            }
         }
 
         .banner p {
@@ -85,6 +109,7 @@
             cursor: pointer;
         }
 
+        /* Search Bar Styles */
         .search-container {
             margin-top: 20px;
             position: relative; /* To position the dropdown */
@@ -250,9 +275,9 @@
 
         /* Request Form Styling */
         .request-section {
-            display: none;
+            display: none; /* Keep this hidden by default */
             padding: 50px;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.8); /* Normal background dark */
             min-height: 100vh; /* Ensure it takes up full height */
             position: relative;
             box-shadow: 0 0 50px darkred;
@@ -261,8 +286,8 @@
         }
 
         .request-form {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.9);
+            /* Removed backdrop filter to ensure brightness */
             padding: 20px;
             border-radius: 10px;
             max-width: 400px;
@@ -402,9 +427,9 @@
             font-weight: normal; /* Ensure text is not bold */
         }
     </style>
-</head>
+</hh_fake_tag_name_head>
 
-<body>
+<hh_fake_tag_name_body>
     <header>
         <div class="logo">Flixfy Tv</div>
         <nav>
@@ -424,7 +449,7 @@
                     <h1>Flixfy</h1>
                     <p>Your favorites, all in one place!</p>
                     <button id="watchNowBtn">Scroll to find the new, the popular, the best</button>
-                    
+
                     <!-- Search Bar -->
                     <div class="search-container">
                         <input type="text" class="search-bar" id="searchBar" placeholder="Search your favorites from Flixify" />
@@ -458,7 +483,7 @@
             </div>
         </section>
 
-        <section id="requestSection" class="request-section">
+        <section id="requestSection" class="request-section" style="display: none;">
             <div class="request-form">
                 <h2>Movie Request</h2>
                 <input type="text" id="name" placeholder="Your Name" required>
@@ -476,7 +501,7 @@
     <!-- Welcome Modal -->
     <div id="welcomeModal">
         <div class="glow">Flixfy CORP. (GLOBAL) [beta]</div>
-        <div class="spin-wheel"></div>
+        <div class="spin-wheel"></div> <!-- Spinning Wheel -->
         <p style="font-size: 14px; color: white; margin-top: 10px;">Getting the latest updates from Flixify Corp</p>
     </div>
 
@@ -503,7 +528,8 @@
         let movies = [
             { title: "Garfield Movie 2024", url: "https://drive.google.com/file/d/1OZBSvjuudnt2GxUUwSTRoFKgbrfu7WPm/preview", imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKnNw6EVlJ_ca_KrnQdZCjPOGdintsXz8XHuP5kSG6Kzl6_dXw" },
             { title: "Twisters", url: "https://drive.google.com/file/d/14_s96ZSrnA-14ORKnLGFAvRX3zZsQhMU/preview", imgSrc: "https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster.png/0/images/masterrepository/fandango/234525/FND_poster_Twisters-Presale.jpg" },
-            { title: "Movie 7", url: "https://www.example.com/movie7", imgSrc: "https://via.placeholder.com/120x180?text=Movie+7" },
+            
+{ title: "Alien Romulus #W/ Sponsor", url: "https://drive.google.com/file/d/1gDUINfGWXaCyvj9JSX-MpCbmHr5L93b8/preview", imgSrc: "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/261/2024/08/05154755/b33nnKl1GSFbao4l3fZDDqsMx0F-scaled.jpg" },
             { title: "Movie 8", url: "https://www.example.com/movie8", imgSrc: "https://via.placeholder.com/120x180?text=Movie+8" }
         ]; // The remaining movies
 
@@ -558,7 +584,7 @@
             if (loggedIn) {
                 document.getElementById('homeSection').style.display = 'none';
                 document.getElementById('requestSection').style.display = 'block';
-                document.body.style.backgroundColor = '#2e2e2e';
+                document.body.style.backgroundColor = '#000';  // Set to standard background color
             } else {
                 document.getElementById('loginSection').style.display = 'flex';
                 document.body.style.backgroundColor = 'rgba(0,0,0,0.9)';
@@ -589,8 +615,8 @@
                 // Show the verification window
                 const approvalWindow = window.open('', '_blank');
                 approvalWindow.document.write(`
-                    <html>
-                        <head>
+                    <hh_fake_tag_name_html>
+                        <hh_fake_tag_name_head>
                             <title>Verification</title>
                             <style>
                                 body {
@@ -621,13 +647,13 @@
                                     color: green;
                                 }
                             </style>
-                        </head>
-                        <body>
+                        </hh_fake_tag_name_head>
+                        <hh_fake_tag_name_body>
                             <div class="unlock-icon">🔓</div>
                             <div class="approval-message">Approved</div>
                             <div class="code">Your verification code is: ${verificationCode}</div>
-                        </body>
-                    </html>
+                        </hh_fake_tag_name_body>
+                    </hh_fake_tag_name_html>
                 `);
 
                 // Show verification form
@@ -731,5 +757,5 @@
         }, 5000); // 5 seconds delay
 
     </script>
-</body>
-</html>
+</hh_fake_tag_name_body>
+</hh_fake_tag_name_html>
