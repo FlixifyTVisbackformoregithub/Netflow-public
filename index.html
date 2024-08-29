@@ -1,8 +1,7 @@
-<link rel="shortcut icon" type="image/png" href="https://i.ibb.co/QFH0DN8/NET.png">
+<!DOCTYPE html>
+<html lang="en">
 
-<hh_fake_doctype> html</hh_fake_doctype>
-<hh_fake_tag_name_html lang="en">
-<hh_fake_tag_name_head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flixfy</title>
@@ -17,11 +16,63 @@
         body {
             font-family: Arial, sans-serif;
             color: #fff;
-            background-color: #000;
+            background-color: #000; /* Normal background color */
             height: auto;
             min-height: 100vh;
             overflow: auto;
             position: relative;
+        }
+
+        /* Hide collaborator section on load */
+        .collaborators-section {
+            display: none; /* Initially hidden */
+        }
+
+        /* Dots Container */
+        #dotsContainer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .dot {
+            position: absolute;
+            border-radius: 50%;
+            background: red;
+            opacity: 0.7;
+            animation: float 5s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Small, medium, and large dot sizes */
+        .dot-small {
+            width: 15px;
+            height: 15px;
+        }
+
+        .dot-medium {
+            width: 25px;
+            height: 25px;
+        }
+
+        .dot-large {
+            width: 35px;
+            height: 35px;
         }
 
         header {
@@ -68,10 +119,10 @@
         }
 
         .banner h1 {
-            font-size: 64px; /* Increased font size for better visibility */
-            color: red; /* Color of the title */
-            animation: sparkle 2s infinite; /* Sparkling effect */
-            transform: rotate(-3deg); /* Create a slight arch */
+            font-size: 64px;
+            color: red;
+            animation: sparkle 2s infinite;
+            transform: rotate(-3deg);
             text-shadow: 
                 0 0 5px rgba(255, 69, 0, 1),
                 0 0 10px rgba(255, 69, 0, 0.8),
@@ -109,22 +160,42 @@
             cursor: pointer;
         }
 
+        .become-collaborator-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            background-color: transparent; /* Transparent to see the glow effect */
+            border: 2px solid white;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 20px red;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .become-collaborator-button:hover {
+            box-shadow: 0 0 40px red;
+        }
+
         /* Search Bar Styles */
         .search-container {
             margin-top: 20px;
-            position: relative; /* To position the dropdown */
+            position: relative;
         }
 
         .search-bar {
             width: 100%;
-            max-width: 600px; /* Updated to make the search bar longer */
+            max-width: 600px;
             height: 40px;
             padding: 10px;
             border: 1px solid #ccc;
-            border-radius: 20px; /* Curved edges */
+            border-radius: 20px;
+
             font-size: 16px;
-            color: black; /* Text color */
-            background: white; /* Background color */
+            color: black;
+            background: white;
             outline: none;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
         }
@@ -134,25 +205,25 @@
         }
 
         .search-results {
-            display: none; /* Initially hidden */
-            position: absolute; /* Positioned relative to the search container */
-            top: 50px; /* Adjust as needed */
+            display: none;
+            position: absolute;
+            top: 50px;
             left: 0;
-            width: 100%; /* Match search bar width */
-            background-color: white; /* Background of the dropdown */
-            border-radius: 5px; /* Curved edges */
+            width: 100%;
+            background-color: white;
+            border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
             z-index: 100;
         }
 
         .search-result {
             padding: 10px;
-            color: black; /* Text color for results */
+            color: black;
             cursor: pointer;
         }
 
         .search-result:hover {
-            background-color: #f0f0f0; /* Highlight on hover */
+            background-color: #f0f0f0;
         }
 
         .movie-section {
@@ -173,22 +244,21 @@
 
         .movie-card {
             position: relative;
-            width: 120px; /* Adjust card width */
+            width: 120px; 
             cursor: pointer;
-            transition: transform 0.3s; /* Smooth transition for transform */
-            border-radius: 10px; /* Rounded corners */
-            overflow: hidden; /* Round the overflow */
+            transition: transform 0.3s;
+            border-radius: 10px;
+            overflow: hidden;
         }
 
         .movie-card img {
-            width: 100%; /* Full width */
-            border-radius: 10px; /* Round image corners */
+            width: 100%;
+            border-radius: 10px;
         }
 
-        /* Hover effect */
         .movie-card:hover {
-            outline: 5px solid white; /* Thick white outline on hover */
-            transform: scale(1.05); /* Slight zoom on hover */
+            outline: 5px solid white; 
+            transform: scale(1.05);
         }
 
         footer {
@@ -201,13 +271,12 @@
             z-index: 5;
         }
 
-        /* Background Carousel */
         .background-carousel {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            min-height: 100%; /* Ensure it covers the full height */
+            min-height: 100%;
             z-index: 1;
             background-image: url('https://giffiles.alphacoders.com/820/820.gif');
             background-repeat: no-repeat;
@@ -219,22 +288,79 @@
             0% {
                 background-position: 0% 0%;
             }
+
             50% {
                 background-position: 100% 0%;
             }
+
             100% {
                 background-position: 0% 0%;
             }
         }
 
+        /* Collaborators Section */
+        .collaborators-section {
+            padding: 50px;
+            position: relative;
+            z-index: 10;
+            text-align: center; /* Center all content */
+        }
+
+        .collaborators-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center collaborators */
+            gap: 20px;
+        }
+
+        .collaborator-card {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            width: 200px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .collaborator-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        #collaboratorRequestModal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+        .request-form {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+            box-shadow: 0 0 30px darkred;
+            border: 2px solid darkred;
+        }
+
         /* Welcome Modal */
         #welcomeModal {
             display: flex;
-            flex-direction: column; /* Allow stacking of elements */
-            align-items: center; /* Center items */
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
             position: fixed;
-            z-index: 200; /* Set a high z-index to ensure it appears above everything */
+            z-index: 200;
             left: 0;
             top: 0;
             width: 100%;
@@ -257,11 +383,11 @@
         .spin-wheel {
             width: 100px;
             height: 100px;
-            border: 10px solid red; /* Red outer border */
+            border: 10px solid red; 
             border-radius: 50%;
-            border-top-color: transparent; /* Make top transparent for spinning effect */
-            animation: spin 1s linear infinite; /* Spin animation */
-            margin: 20px 0; /* Spacing around the wheel */
+            border-top-color: transparent; 
+            animation: spin 1s linear infinite; 
+            margin: 20px 0; 
         }
 
         @keyframes spin {
@@ -275,25 +401,14 @@
 
         /* Request Form Styling */
         .request-section {
-            display: none; /* Keep this hidden by default */
+            display: none; 
             padding: 50px;
-            background: rgba(0, 0, 0, 0.8); /* Normal background dark */
-            min-height: 100vh; /* Ensure it takes up full height */
+            background: rgba(20, 20, 20, 0.9);
+            min-height: 100vh; 
             position: relative;
             box-shadow: 0 0 50px darkred;
             border: 5px solid darkred;
             z-index: 10;
-        }
-
-        .request-form {
-            background: rgba(255, 255, 255, 0.9);
-            /* Removed backdrop filter to ensure brightness */
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 400px;
-            margin: 0 auto;
-            box-shadow: 0 0 30px darkred;
-            border: 2px solid darkred;
         }
 
         .request-form input,
@@ -366,19 +481,18 @@
             right: 10px;
             cursor: pointer;
             padding: 10px;
-            font-size: 36px; /* Font size for the close button */
-            line-height: 1; /* Ensure the text is vertically centered */
+            font-size: 36px;
+            line-height: 1;
             border: none;
-            border-radius: 50%; /* Make it circular */
-            width: 60px;  /* Width of the button */
-            height: 60px; /* Height of the button */
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
             background: linear-gradient(45deg, red, black);
-            background-size: 200% 200%; /* For the animated gradient */
-            animation: liquid 2s ease infinite; /* Animation for liquid effect */
-            color: white; /* Close button color */
+            background-size: 200% 200%;
+            animation: liquid 2s ease infinite;
+            color: white;
         }
 
-        /* Liquid rotation effect */
         @keyframes liquid {
             0% {
                 background-position: 0% 50%;
@@ -393,7 +507,7 @@
 
         .modal-close:hover {
             background: linear-gradient(45deg, black, red);
-            transition: background 0.3s; /* Smooth color transition on hover */
+            transition: background 0.3s;
         }
 
         /* Bug Fixes Box Style */
@@ -408,8 +522,8 @@
             box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
             text-align: center;
             font-family: Arial, sans-serif;
-            z-index: 200; /* Ensure it appears above other content */
-            animation: glow 1.5s infinite alternate; /* Glow effect */
+            z-index: 200; 
+            animation: glow 1.5s infinite alternate; 
         }
 
         @keyframes glow {
@@ -422,25 +536,27 @@
         }
 
         .bug-fixes p {
-            margin: 5px 0; /* Space between paragraphs */
-            color: black; /* Standard text color */
-            font-weight: normal; /* Ensure text is not bold */
+            margin: 5px 0; 
+            color: black; 
+            font-weight: normal; 
         }
     </style>
-</hh_fake_tag_name_head>
+</head>
 
-<hh_fake_tag_name_body>
+<body>
     <header>
         <div class="logo">Flixfy Tv</div>
         <nav>
             <ul>
                 <li><a href="#" id="homeLink">Home</a></li>
                 <li><a href="#" id="requestLink">Request</a></li>
+                <li><a href="#" id="collaboratorsLink">Collaborators</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="background-carousel"></div>
+    <div id="dotsContainer"></div> <!-- Container for dots -->
 
     <main>
         <section id="homeSection">
@@ -453,17 +569,31 @@
                     <!-- Search Bar -->
                     <div class="search-container">
                         <input type="text" class="search-bar" id="searchBar" placeholder="Search your favorites from Flixify" />
-                        <div class="search-results" id="searchResults"></div> <!-- Dropdown for results -->
+                        <div class="search-results" id="searchResults"></div>
                     </div>
                 </div>
             </div>
 
             <section class="movie-section">
-                <h2>Flixfy Free</h2>
+                <h2>Flixfy ALL</h2>
                 <div class="movie-grid">
-                    <!-- Movie cards will be added here dynamically via JavaScript -->
                 </div>
             </section>
+        </section>
+
+        <section id="collaboratorsSection" class="collaborators-section">
+            <h2>Our Collaborators</h2>
+            <div class="collaborators-grid">
+                <div class="collaborator-card">
+                    <img src="https://i.ibb.co/163WvcF/Untitled-design.png" alt="Collaborator Name" class="collaborator-image">
+                    <h3>Noah Erspamer</h3>
+                    <p>Creator of Flixify and other movie website targets based for browsers!</p>
+                    <a href="flixifybeta.netlify.app" target="_blank">Visit Website</a>
+                </div>
+               
+                </div>
+            </div>
+            <a href="#" id="becomeCollaboratorBtn" class="become-collaborator-button">Become a Collaborator</a>
         </section>
 
         <section id="loginSection" class="login-section" style="display: none;">
@@ -501,7 +631,7 @@
     <!-- Welcome Modal -->
     <div id="welcomeModal">
         <div class="glow">Flixfy CORP. (GLOBAL) [beta]</div>
-        <div class="spin-wheel"></div> <!-- Spinning Wheel -->
+        <div class="spin-wheel"></div>
         <p style="font-size: 14px; color: white; margin-top: 10px;">Getting the latest updates from Flixify Corp</p>
     </div>
 
@@ -513,6 +643,20 @@
         </div>
     </div>
 
+    <!-- Collaborator Request Modal -->
+    <div id="collaboratorRequestModal">
+        <div class="request-form">
+            <h2>Become a Collaborator</h2>
+            <input type="text" id="collabName" placeholder="Your Name" required>
+            <input type="email" id="collabEmail" placeholder="Your Email" required>
+            <input type="text" id="collabPhone" placeholder="Your Phone Number" required>
+            <input type="url" id="collabWebsite" placeholder="Your Website URL" required>
+            <textarea id="collabDescription" placeholder="Why do you want to be a collaborator?" rows="4" required></textarea>
+            <button type="button" id="submitCollabRequest">Submit Request</button>
+            <button type="button" id="closeCollabRequestModal">Close</button>
+        </div>
+    </div>
+
     <!-- Bug Fixes Box -->
     <div class="bug-fixes">
         <p>Bug Fixes</p>
@@ -521,6 +665,27 @@
     </div>
 
     <script>
+        // Generate glowing dots
+        const numDots = 50; // Number of dots to generate
+        const dotsContainer = document.getElementById('dotsContainer');
+
+        for (let i = 0; i < numDots; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+
+            // Randomly assign a size
+            const sizeClass = Math.random() < 0.3 ? 'dot-large' : (Math.random() < 0.5 ? 'dot-medium' : 'dot-small');
+            dot.classList.add(sizeClass);
+            
+            // Set random position within the viewport minus the size
+            const dotSize = parseInt(dot.classList.contains('dot-large') ? '35' : (dot.classList.contains('dot-medium') ? '25' : '15'));
+            dot.style.left = Math.random() * (window.innerWidth - dotSize) + 'px'; 
+            dot.style.top = Math.random() * (window.innerHeight - dotSize) + 'px'; 
+            dot.style.animationDuration = Math.random() * 3 + 2 + 's'; // Random duration
+
+            dotsContainer.appendChild(dot);
+        }
+
         let loggedIn = false;
         let verificationCode = ''; // Variable to store verification code
 
@@ -528,9 +693,8 @@
         let movies = [
             { title: "Garfield Movie 2024", url: "https://drive.google.com/file/d/1OZBSvjuudnt2GxUUwSTRoFKgbrfu7WPm/preview", imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKnNw6EVlJ_ca_KrnQdZCjPOGdintsXz8XHuP5kSG6Kzl6_dXw" },
             { title: "Twisters", url: "https://drive.google.com/file/d/14_s96ZSrnA-14ORKnLGFAvRX3zZsQhMU/preview", imgSrc: "https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster.png/0/images/masterrepository/fandango/234525/FND_poster_Twisters-Presale.jpg" },
-            
-{ title: "Alien Romulus #W/ Sponsor", url: "https://drive.google.com/file/d/1gDUINfGWXaCyvj9JSX-MpCbmHr5L93b8/preview", imgSrc: "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/261/2024/08/05154755/b33nnKl1GSFbao4l3fZDDqsMx0F-scaled.jpg" },
-            { title: "Movie 8", url: "https://www.example.com/movie8", imgSrc: "https://via.placeholder.com/120x180?text=Movie+8" }
+            { title: "Imaginary", url: "https://drive.google.com/file/d/1ZiPMKkIpNxqP1-3_aYf_m2fofWg2kDOC/preview", imgSrc: "https://www.movieposters.com/cdn/shop/files/imaginary_jkmt1wha_600x.jpg?v=1707249079" },
+            { title: "Alien Romulus", url: "https://drive.google.com/file/d/1gDUINfGWXaCyvj9JSX-MpCbmHr5L93b8/preview", imgSrc: "https://s3.amazonaws.com/nightjarprod/content/uploads/sites/261/2024/08/05154755/b33nnKl1GSFbao4l3fZDDqsMx0F-scaled.jpg" }
         ]; // The remaining movies
 
         // Populate movie cards
@@ -572,7 +736,8 @@
             if (loggedIn) {
                 document.getElementById('homeSection').style.display = 'block';
                 document.getElementById('requestSection').style.display = 'none';
-                document.body.style.backgroundColor = '#141414';
+                document.getElementById('collaboratorsSection').style.display = 'none';
+                document.body.style.backgroundColor = '#141414'; // Maintains normal background color
             } else {
                 document.getElementById('loginSection').style.display = 'flex';
                 document.body.style.backgroundColor = 'rgba(0,0,0,0.9)';
@@ -583,8 +748,9 @@
         document.getElementById('requestLink').addEventListener('click', function () {
             if (loggedIn) {
                 document.getElementById('homeSection').style.display = 'none';
-                document.getElementById('requestSection').style.display = 'block';
-                document.body.style.backgroundColor = '#000';  // Set to standard background color
+                document.getElementById('requestSection').style.display = 'block'; 
+                document.getElementById('collaboratorsSection').style.display = 'none';
+                document.body.style.backgroundColor = '#141414';
             } else {
                 document.getElementById('loginSection').style.display = 'flex';
                 document.body.style.backgroundColor = 'rgba(0,0,0,0.9)';
@@ -592,14 +758,18 @@
             }
         });
 
+        document.getElementById('collaboratorsLink').addEventListener('click', function () {
+            document.getElementById('homeSection').style.display = 'none';
+            document.getElementById('requestSection').style.display = 'none';
+            document.getElementById('collaboratorsSection').style.display = 'block'; 
+        });
+
         document.getElementById('sendVerificationBtn').addEventListener('click', function () {
             const phoneNumber = document.getElementById('phoneNumber').value;
 
-            // Validate phone number length (for simplicity, let's assume US numbers)
             if (phoneNumber.length === 10) {
-                const verifiedNumbers = JSON.parse(localStorage.getItem('verifiedNumbers')) || [];
+                const verifiedNumbers = JSON.parse(localStorage.getItem('verifiedNumbers')) || []; 
 
-                // Check if phone number is already verified
                 if (verifiedNumbers.includes(phoneNumber)) {
                     alert("This phone number has already been verified. You can log in directly.");
                     document.getElementById('loginSection').style.display = 'none';
@@ -609,14 +779,12 @@
                     return;
                 }
 
-                // Generate a random 4-digit verification code
                 verificationCode = Math.floor(1000 + Math.random() * 9000).toString();
 
-                // Show the verification window
                 const approvalWindow = window.open('', '_blank');
                 approvalWindow.document.write(`
-                    <hh_fake_tag_name_html>
-                        <hh_fake_tag_name_head>
+                    <html>
+                        <head>
                             <title>Verification</title>
                             <style>
                                 body {
@@ -647,18 +815,17 @@
                                     color: green;
                                 }
                             </style>
-                        </hh_fake_tag_name_head>
-                        <hh_fake_tag_name_body>
+                        </head>
+                        <body>
                             <div class="unlock-icon">🔓</div>
                             <div class="approval-message">Approved</div>
                             <div class="code">Your verification code is: ${verificationCode}</div>
-                        </hh_fake_tag_name_body>
-                    </hh_fake_tag_name_html>
+                        </body>
+                    </html>
                 `);
 
-                // Show verification form
-                document.getElementById('loginForm').style.display = 'none'; // Hide phone input
-                document.getElementById('verificationForm').style.display = 'flex'; // Show verification input
+                document.getElementById('loginForm').style.display = 'none';
+                document.getElementById('verificationForm').style.display = 'flex'; 
             } else {
                 alert("Please enter a valid 10-digit phone number.");
             }
@@ -668,7 +835,6 @@
             const enteredCode = document.getElementById('enteredVerificationCode').value;
             const verificationMessage = document.getElementById('verificationMessage');
 
-            // Check if the entered code matches the generated code
             if (enteredCode === verificationCode) {
                 loggedIn = true;
 
@@ -704,6 +870,36 @@
             }
         });
 
+        // Collaborator request functionality
+        document.getElementById('becomeCollaboratorBtn').addEventListener('click', function () {
+            document.getElementById('collaboratorRequestModal').style.display = 'flex';
+        });
+
+        // Close the collaborator request modal
+        document.getElementById('closeCollabRequestModal').addEventListener('click', function () {
+            document.getElementById('collaboratorRequestModal').style.display = 'none';
+        });
+
+        // Submit the collaborator request
+        document.getElementById('submitCollabRequest').addEventListener('click', function () {
+            const collabName = document.getElementById('collabName').value;
+            const collabEmail = document.getElementById('collabEmail').value;
+            const collabPhone = document.getElementById('collabPhone').value;
+            const collabWebsite = document.getElementById('collabWebsite').value;
+            const collabDescription = document.getElementById('collabDescription').value;
+
+            if (collabName && collabEmail && collabPhone && collabWebsite && collabDescription) {
+                // Send email functionality (A real implementation would require back-end support)
+                const mailtoLink = `mailto:1056521@lcps.org?subject=Collaboration Request from ${encodeURIComponent(collabName)}&body=Name: ${encodeURIComponent(collabName)}%0AEmail: ${encodeURIComponent(collabEmail)}%0APhone: ${encodeURIComponent(collabPhone)}%0AWebsite: ${encodeURIComponent(collabWebsite)}%0ADescription: ${encodeURIComponent(collabDescription)}`;
+                window.location.href = mailtoLink;
+
+                alert(`Thank you for your interest, ${collabName}!`);
+                document.getElementById('collaboratorRequestModal').style.display = 'none'; // Close modal
+            } else {
+                alert('Please fill in all fields before submitting your request.');
+            }
+        });
+
         // Search functionality
         const searchBar = document.getElementById('searchBar');
         const searchResults = document.getElementById('searchResults');
@@ -719,43 +915,40 @@
                     const resultItem = document.createElement('div');
                     resultItem.classList.add('search-result');
                     resultItem.textContent = movie.title;
-                    resultItem.addEventListener('click', function() {
-                        openMovieModal(movie.url); // Open the movie in modal on click
-                        searchBar.value = ''; // Clear the search input
-                        searchResults.innerHTML = ''; // Clear results
-                        searchResults.style.display = 'none'; // Hide results after selection
+                    resultItem.addEventListener('click', function () {
+                        openMovieModal(movie.url);
+                        searchBar.value = '';
+                        searchResults.innerHTML = '';
+                        searchResults.style.display = 'none';
                     });
                     searchResults.appendChild(resultItem);
                 });
-                searchResults.style.display = 'block'; // Show the dropdown
+                searchResults.style.display = 'block';
             } else {
-                searchResults.style.display = 'none'; // Hide if no results
+                searchResults.style.display = 'none';
             }
         });
 
-        // Close search results when clicking outside
-        document.addEventListener('click', function(event) {
+        document.addEventListener('click', function (event) {
             if (!searchBar.contains(event.target) && !searchResults.contains(event.target)) {
                 searchResults.style.display = 'none'; // Hide results when clicking outside
             }
         });
 
-        // Function to close all modals
         function closeAllModals() {
             document.getElementById('myModal').style.display = "none";
             document.getElementById('loginSection').style.display = "none";
             document.getElementById('verificationForm').style.display = "none";
+            document.getElementById('collaboratorRequestModal').style.display = "none";
         }
 
-        // Auto-close welcome modal after a delay and close any open modals
         setTimeout(() => {
-            closeAllModals(); // Ensure all modals are closed
-            document.getElementById('welcomeModal').style.display = 'none'; // Close the welcome modal
-
-            // Show the login form
+            closeAllModals();
+            document.getElementById('welcomeModal').style.display = 'none';
+            document.getElementById('collaboratorsSection').style.display = 'block'; // Show collaborators section on load
             document.getElementById('loginSection').style.display = 'flex'; // Show login section
         }, 5000); // 5 seconds delay
-
     </script>
-</hh_fake_tag_name_body>
-</hh_fake_tag_name_html>
+</body>
+
+</html>
