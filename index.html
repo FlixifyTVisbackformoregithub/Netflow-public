@@ -1,3 +1,5 @@
+<link rel="shortcut icon" type="image/png" href="">
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,8 +25,9 @@
             position: relative;
         }
 
-        /* Hide collaborator section on load */
-        .collaborators-section {
+        /* Hide collaborator section and others on load */
+        .collaborators-section,
+        .request-section {
             display: none; /* Initially hidden */
         }
 
@@ -51,9 +54,11 @@
             0% {
                 transform: translateY(0);
             }
+
             50% {
                 transform: translateY(-20px);
             }
+
             100% {
                 transform: translateY(0);
             }
@@ -123,7 +128,7 @@
             color: red;
             animation: sparkle 2s infinite;
             transform: rotate(-3deg);
-            text-shadow: 
+            text-shadow:
                 0 0 5px rgba(255, 69, 0, 1),
                 0 0 10px rgba(255, 69, 0, 0.8),
                 0 0 15px rgba(255, 69, 0, 0.6),
@@ -132,14 +137,16 @@
         }
 
         @keyframes sparkle {
-            0%, 100% {
-                text-shadow: 
+            0%,
+            100% {
+                text-shadow:
                     0 0 5px rgba(255, 69, 0, 0.5),
                     0 0 10px rgba(255, 69, 0, 0.4),
                     0 0 15px rgba(255, 69, 0, 0.3);
             }
+
             50% {
-                text-shadow: 
+                text-shadow:
                     0 0 20px rgba(255, 0, 0, 1),
                     0 0 25px rgba(255, 0, 0, 0.8),
                     0 0 30px rgba(255, 0, 0, 0.6);
@@ -166,7 +173,7 @@
             padding: 10px 20px;
             font-size: 18px;
             color: white;
-            background-color: transparent; /* Transparent to see the glow effect */
+            background-color: transparent;
             border: 2px solid white;
             border-radius: 10px;
             text-align: center;
@@ -192,7 +199,6 @@
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 20px;
-
             font-size: 16px;
             color: black;
             background: white;
@@ -244,7 +250,7 @@
 
         .movie-card {
             position: relative;
-            width: 120px; 
+            width: 120px;
             cursor: pointer;
             transition: transform 0.3s;
             border-radius: 10px;
@@ -256,8 +262,9 @@
             border-radius: 10px;
         }
 
+        /* Hover effect */
         .movie-card:hover {
-            outline: 5px solid white; 
+            outline: 5px solid white;
             transform: scale(1.05);
         }
 
@@ -271,6 +278,7 @@
             z-index: 5;
         }
 
+        /* Background Carousel */
         .background-carousel {
             position: absolute;
             top: 0;
@@ -303,13 +311,13 @@
             padding: 50px;
             position: relative;
             z-index: 10;
-            text-align: center; /* Center all content */
+            text-align: center;
         }
 
         .collaborators-grid {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center; /* Center collaborators */
+            justify-content: center;
             gap: 20px;
         }
 
@@ -383,17 +391,18 @@
         .spin-wheel {
             width: 100px;
             height: 100px;
-            border: 10px solid red; 
+            border: 10px solid red;
             border-radius: 50%;
-            border-top-color: transparent; 
-            animation: spin 1s linear infinite; 
-            margin: 20px 0; 
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+            margin: 20px 0;
         }
 
         @keyframes spin {
             0% {
                 transform: rotate(0deg);
             }
+
             100% {
                 transform: rotate(360deg);
             }
@@ -401,10 +410,10 @@
 
         /* Request Form Styling */
         .request-section {
-            display: none; 
+            display: none;
             padding: 50px;
             background: rgba(20, 20, 20, 0.9);
-            min-height: 100vh; 
+            min-height: 100vh;
             position: relative;
             box-shadow: 0 0 50px darkred;
             border: 5px solid darkred;
@@ -434,111 +443,138 @@
 
         /* Login/Signup Section Styling */
         .login-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 50px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            z-index: 15;
-            background: rgba(0, 0, 0, 0.8);
-            box-shadow: 0 0 50px darkred;
+            display: none; /* Hidden by default */
+            flex-direction: column; /* Column layout */
+            align-items: center; /* Center alignment */
+            justify-content: center; /* Center vertically */
+            padding: 50px; /* Inner padding */
+            position: fixed; /* Fixed positioning */
+            top: 0; /* Start from top */
+            left: 0; /* Start from left */
+            width: 100%; /* Full width */
+            height: 100vh; /* Full height */
+            z-index: 15; /* Raised Z-index */
+            background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+            box-shadow: 0 0 50px darkred; /* Shadow effect */
         }
 
         /* Modal Styling */
         .modal {
-            display: none;
-            position: fixed;
-            z-index: 100;
-            left: 0;
-            top: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            display: flex;
+            display: none; /* Hidden by default */
+            position: fixed; /* Fixed positioning */
+            z-index: 100; /* Raised Z-index */
+            left: 0; /* Start from left */
+            top: 0; /* Start from top */
+            width: 100vw; /* Full width */
+            height: 100vh; /* Full height */
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            display: flex; /* Flex display */
         }
 
         .modal-content {
-            background-color: white;
-            margin: 5% auto;
-            padding: 20px;
-            width: 90vw;
-            height: 80vh;
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
+            background-color: white; /* Background color */
+            margin: 5% auto; /* Vertical margin */
+            padding: 20px; /* Inner padding */
+            width: 90vw; /* Width of modal */
+            height: 80vh; /* Height of modal */
+            border-radius: 10px; /* Rounded corners */
+            position: relative; /* Positioning */
+            overflow: hidden; /* Hides overflow */
         }
 
         .modal-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            padding: 10px;
-            font-size: 36px;
-            line-height: 1;
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, red, black);
-            background-size: 200% 200%;
-            animation: liquid 2s ease infinite;
-            color: white;
+            position: absolute; /* Absolute positioning */
+            top: 10px; /* Top position */
+            right: 10px; /* Right position */
+            cursor: pointer; /* Pointer cursor on hover */
+            padding: 10px; /* Inner padding */
+            font-size: 36px; /* Font size */
+            line-height: 1; /* Vertical alignment */
+            border: none; /* No border */
+            border-radius: 50%; /* Circular button */
+            width: 60px; /* Width of button */
+            height: 60px; /* Height of button */
+            background: linear-gradient(45deg, red, black); /* Gradient background */
+            background-size: 200% 200%; /* For animation */
+            animation: liquid 2s ease infinite; /* Animation for liquid effect */
+            color: white; /* Text color */
         }
 
         @keyframes liquid {
             0% {
-                background-position: 0% 50%;
+                background-position: 0% 50%; /* Start position */
             }
+
             50% {
-                background-position: 100% 50%;
+                background-position: 100% 50%; /* Mid position */
             }
+
             100% {
-                background-position: 0% 50%;
+                background-position: 0% 50%; /* End position */
             }
         }
 
         .modal-close:hover {
-            background: linear-gradient(45deg, black, red);
-            transition: background 0.3s;
+            background: linear-gradient(45deg, black, red); /* Hover effect */
+            transition: background 0.3s; /* Smooth transition */
         }
 
+        /* Lightning Effect */
+        .lightning {
+            position: absolute; /* Fixed positioning */
+            top: 0; 
+            left: 0; 
+            width: 100vw; 
+            height: 100vh;
+            pointer-events: none; /* Ignore pointer events */
+            z-index: 0; /* Behind everything */
+            opacity: 0; /* Start invisible */
+            animation: flash 1s infinite; /* Flashing effect */
+        }
+
+        @keyframes flash {
+            0% {
+                opacity: 0; /* Initially transparent */
+            }
+            50% {
+                opacity: 0.5; /* Partially transparent */
+            }
+            100% {
+                opacity: 0; /* Back to transparent */
+            }
+        }
+        
         /* Bug Fixes Box Style */
         .bug-fixes {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: white;
-            color: black;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
-            text-align: center;
-            font-family: Arial, sans-serif;
-            z-index: 200; 
-            animation: glow 1.5s infinite alternate; 
+            position: fixed; /* Fixed positioning */
+            bottom: 20px; /* Distance from bottom */
+            right: 20px; /* Distance from right */
+            background-color: white; /* Background color */
+            color: black; /* Text color */
+            border-radius: 10px; /* Rounded corners */
+            padding: 15px; /* Inner padding */
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8); /* Shadow effect */
+            text-align: center; /* Centered text */
+            font-family: Arial, sans-serif; /* Font family */
+            z-index: 200; /* Raised Z-index */
+            animation: glow 1.5s infinite alternate; /* Glow animation */
         }
 
         @keyframes glow {
             0% {
-                box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+                box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); /* Initial shadow */
             }
             100% {
-                box-shadow: 0 0 20px rgba(255, 0, 0, 1);
+                box-shadow: 0 0 20px rgba(255, 0, 0, 1); /* Maximum shadow */
             }
         }
 
         .bug-fixes p {
-            margin: 5px 0; 
-            color: black; 
-            font-weight: normal; 
+            margin: 5px 0; /* Space between paragraphs */
+            color: black; /* Standard text color */
+            font-weight: normal; /* Normal weight */
         }
     </style>
 </head>
@@ -557,9 +593,10 @@
 
     <div class="background-carousel"></div>
     <div id="dotsContainer"></div> <!-- Container for dots -->
+    <div class="lightning"></div> <!-- Lightning Effect -->
 
     <main>
-        <section id="homeSection">
+        <section id="homeSection" style="display: block;"> <!-- Home section displayed initially -->
             <div class="banner">
                 <div class="banner-content">
                     <h1>Flixfy</h1>
@@ -569,15 +606,14 @@
                     <!-- Search Bar -->
                     <div class="search-container">
                         <input type="text" class="search-bar" id="searchBar" placeholder="Search your favorites from Flixify" />
-                        <div class="search-results" id="searchResults"></div>
+                        <div class="search-results" id="searchResults"></div> <!-- Dropdown for results -->
                     </div>
                 </div>
             </div>
 
             <section class="movie-section">
                 <h2>Flixfy ALL</h2>
-                <div class="movie-grid">
-                </div>
+                <div class="movie-grid"></div> <!-- Movie grid initialized -->
             </section>
         </section>
 
@@ -585,18 +621,19 @@
             <h2>Our Collaborators</h2>
             <div class="collaborators-grid">
                 <div class="collaborator-card">
-                    <img src="https://i.ibb.co/163WvcF/Untitled-design.png" alt="Collaborator Name" class="collaborator-image">
+                    <img src="https://www.bing.com/images/blob?bcid=Tvoxm58EjnEHQEfC4ZXTldv80jhs.....0I" alt="Collaborator Name" class="collaborator-image">
                     <h3>Noah Erspamer</h3>
-                    <p>Creator of Flixify and other movie website targets based for browsers!</p>
-                    <a href="flixifybeta.netlify.app" target="_blank">Visit Website</a>
+                    <p>High Tech Developer Html & JS Coder, Makes movie websites for browsers! OWNER OF FLIXIFYCORP</p>
+                    <a href="https://flixifybeta.netlify.app/" target="_blank">RETURN TO HOME OF FLIXIFY</a>
                 </div>
-               
+                
                 </div>
+                <!-- More cards can be added -->
             </div>
             <a href="#" id="becomeCollaboratorBtn" class="become-collaborator-button">Become a Collaborator</a>
         </section>
 
-        <section id="loginSection" class="login-section" style="display: none;">
+        <section id="loginSection" class="login-section">
             <div class="request-form" id="loginForm">
                 <h2>Sign In</h2>
                 <input type="text" id="phoneNumber" placeholder="Your Phone Number" required>
@@ -631,7 +668,7 @@
     <!-- Welcome Modal -->
     <div id="welcomeModal">
         <div class="glow">Flixfy CORP. (GLOBAL) [beta]</div>
-        <div class="spin-wheel"></div>
+        <div class="spin-wheel"></div> <!-- Spinning Wheel -->
         <p style="font-size: 14px; color: white; margin-top: 10px;">Getting the latest updates from Flixify Corp</p>
     </div>
 
@@ -674,22 +711,24 @@
             dot.classList.add('dot');
 
             // Randomly assign a size
-            const sizeClass = Math.random() < 0.3 ? 'dot-large' : (Math.random() < 0.5 ? 'dot-medium' : 'dot-small');
+            const sizeClass = Math.random() < 0.3 ? 'dot-large' :
+                (Math.random() < 0.5 ? 'dot-medium' : 'dot-small');
             dot.classList.add(sizeClass);
-            
+
             // Set random position within the viewport minus the size
-            const dotSize = parseInt(dot.classList.contains('dot-large') ? '35' : (dot.classList.contains('dot-medium') ? '25' : '15'));
-            dot.style.left = Math.random() * (window.innerWidth - dotSize) + 'px'; 
-            dot.style.top = Math.random() * (window.innerHeight - dotSize) + 'px'; 
+            const dotSize = parseInt(dot.classList.contains('dot-large') ?
+                '35' : (dot.classList.contains('dot-medium') ? '25' : '15'));
+            dot.style.left = Math.random() * (window.innerWidth - dotSize) + 'px';
+            dot.style.top = Math.random() * (window.innerHeight - dotSize) + 'px';
             dot.style.animationDuration = Math.random() * 3 + 2 + 's'; // Random duration
 
             dotsContainer.appendChild(dot);
         }
 
-        let loggedIn = false;
+        let loggedIn = false; // User logged-in state
         let verificationCode = ''; // Variable to store verification code
 
-        // Movies data (keeping the last 4 movies)
+        // Movies data
         let movies = [
             { title: "Garfield Movie 2024", url: "https://drive.google.com/file/d/1OZBSvjuudnt2GxUUwSTRoFKgbrfu7WPm/preview", imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKnNw6EVlJ_ca_KrnQdZCjPOGdintsXz8XHuP5kSG6Kzl6_dXw" },
             { title: "Twisters", url: "https://drive.google.com/file/d/14_s96ZSrnA-14ORKnLGFAvRX3zZsQhMU/preview", imgSrc: "https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster.png/0/images/masterrepository/fandango/234525/FND_poster_Twisters-Presale.jpg" },
@@ -713,7 +752,7 @@
                 openMovieModal(movie.url);
             });
 
-            movieGrid.appendChild(movieCard);
+            movieGrid.appendChild(movieCard); // Append movie card to grid
         });
 
         // Function to display the modal for movie playback
@@ -729,59 +768,54 @@
         }
 
         document.getElementById('watchNowBtn').addEventListener('click', function () {
-            alert("Feature coming soon!");
+            alert("Feature coming soon!"); // Placeholder for functionality
         });
 
+        // Navigation links
         document.getElementById('homeLink').addEventListener('click', function () {
-            if (loggedIn) {
-                document.getElementById('homeSection').style.display = 'block';
-                document.getElementById('requestSection').style.display = 'none';
-                document.getElementById('collaboratorsSection').style.display = 'none';
-                document.body.style.backgroundColor = '#141414'; // Maintains normal background color
-            } else {
-                document.getElementById('loginSection').style.display = 'flex';
-                document.body.style.backgroundColor = 'rgba(0,0,0,0.9)';
-                document.getElementById('homeSection').style.display = 'none'; // Ensure home section is hidden
-            }
+            document.getElementById('homeSection').style.display = 'block'; // Show home section
+            document.getElementById('requestSection').style.display = 'none'; // Hide request section
+            document.getElementById('collaboratorsSection').style.display = 'none'; // Hide collaborators section
+            document.getElementById('loginSection').style.display = 'flex'; // Show login section
         });
 
         document.getElementById('requestLink').addEventListener('click', function () {
             if (loggedIn) {
-                document.getElementById('homeSection').style.display = 'none';
-                document.getElementById('requestSection').style.display = 'block'; 
-                document.getElementById('collaboratorsSection').style.display = 'none';
-                document.body.style.backgroundColor = '#141414';
+                document.getElementById('homeSection').style.display = 'none'; // Hide home section
+                document.getElementById('requestSection').style.display = 'block'; // Show request section
+                document.getElementById('collaboratorsSection').style.display = 'none'; // Hide collaborators section
+                document.body.style.backgroundColor = '#141414'; // Set background color
             } else {
-                document.getElementById('loginSection').style.display = 'flex';
-                document.body.style.backgroundColor = 'rgba(0,0,0,0.9)';
-                document.getElementById('homeSection').style.display = 'none'; // Ensure home section is hidden
+                document.getElementById('loginSection').style.display = 'flex'; // Show login section if needed
+                document.body.style.backgroundColor = 'rgba(0,0,0,0.9)'; // Set dark background for login
             }
         });
 
         document.getElementById('collaboratorsLink').addEventListener('click', function () {
-            document.getElementById('homeSection').style.display = 'none';
-            document.getElementById('requestSection').style.display = 'none';
-            document.getElementById('collaboratorsSection').style.display = 'block'; 
+            document.getElementById('homeSection').style.display = 'none'; // Hide home section
+            document.getElementById('requestSection').style.display = 'none'; // Hide request section
+            document.getElementById('collaboratorsSection').style.display = 'block'; // Show collaborators section
+            document.getElementById('loginSection').style.display = loggedIn ? 'none' : 'flex'; // Ensure login section is hidden if logged in
         });
 
         document.getElementById('sendVerificationBtn').addEventListener('click', function () {
             const phoneNumber = document.getElementById('phoneNumber').value;
 
             if (phoneNumber.length === 10) {
-                const verifiedNumbers = JSON.parse(localStorage.getItem('verifiedNumbers')) || []; 
+                const verifiedNumbers = JSON.parse(localStorage.getItem('verifiedNumbers')) || [];
 
                 if (verifiedNumbers.includes(phoneNumber)) {
                     alert("This phone number has already been verified. You can log in directly.");
-                    document.getElementById('loginSection').style.display = 'none';
-                    document.getElementById('homeSection').style.display = 'block';
-                    loggedIn = true;
+                    document.getElementById('loginSection').style.display = 'none'; // Hide login section
+                    document.getElementById('homeSection').style.display = 'block'; // Show home section
+                    loggedIn = true; // User is logged in
                     document.body.style.backgroundColor = '#141414';
                     return;
                 }
 
-                verificationCode = Math.floor(1000 + Math.random() * 9000).toString();
+                verificationCode = Math.floor(1000 + Math.random() * 9000).toString(); // Generate a 4-digit code
 
-                const approvalWindow = window.open('', '_blank');
+                const approvalWindow = window.open('', '_blank'); // Open a new window for verification
                 approvalWindow.document.write(`
                     <html>
                         <head>
@@ -789,30 +823,30 @@
                             <style>
                                 body {
                                     display: flex;
-                                    justify-content: center;
-                                    align-items: center;
-                                    height: 100vh;
-                                    background-color: #282c34;
-                                    color: white;
-                                    font-family: Arial, sans-serif;
-                                    text-align: center;
+                                    justify-content: center; /* Centered alignment */
+                                    align-items: center; /* Centered vertically */
+                                    height: 100vh; /* Full height */
+                                    background-color: #282c34; /* Background color */
+                                    color: white; /* Text color */
+                                    font-family: Arial, sans-serif; /* Font family */
+                                    text-align: center; /* Centered text */
                                 }
                                 .approval-message {
-                                    font-size: 32px;
-                                    margin-bottom: 20px;
-                                    color: green;
-                                    font-weight: bold;
+                                    font-size: 32px; /* Font size */
+                                    margin-bottom: 20px; /* Margin below */
+                                    color: green; /* Text color */
+                                    font-weight: bold; /* Bold text */
                                 }
                                 .code {
-                                    font-size: 24px;
-                                    margin: 20px 0;
-                                    background: #444;
-                                    padding: 15px;
-                                    border-radius: 5px;
+                                    font-size: 24px; /* Font size */
+                                    margin: 20px 0; /* Vertical margin */
+                                    background: #444; /* Background color */
+                                    padding: 15px; /* Inner padding */
+                                    border-radius: 5px; /* Rounded corners */
                                 }
                                 .unlock-icon {
-                                    font-size: 48px;
-                                    color: green;
+                                    font-size: 48px; /* Size of unlock icon */
+                                    color: green; /* Icon color */
                                 }
                             </style>
                         </head>
@@ -824,10 +858,10 @@
                     </html>
                 `);
 
-                document.getElementById('loginForm').style.display = 'none';
-                document.getElementById('verificationForm').style.display = 'flex'; 
+                document.getElementById('loginForm').style.display = 'none'; // Hide phone input
+                document.getElementById('verificationForm').style.display = 'flex'; // Show verification input
             } else {
-                alert("Please enter a valid 10-digit phone number.");
+                alert("Please enter a valid 10-digit phone number."); // Alert message for invalid number
             }
         });
 
@@ -836,117 +870,120 @@
             const verificationMessage = document.getElementById('verificationMessage');
 
             if (enteredCode === verificationCode) {
-                loggedIn = true;
+                loggedIn = true; // Set loggedIn to true
 
                 let verifiedNumbers = JSON.parse(localStorage.getItem('verifiedNumbers')) || [];
                 if (!verifiedNumbers.includes(document.getElementById('phoneNumber').value)) {
-                    verifiedNumbers.push(document.getElementById('phoneNumber').value);
-                    localStorage.setItem('verifiedNumbers', JSON.stringify(verifiedNumbers));
+                    verifiedNumbers.push(document.getElementById('phoneNumber').value); // Store verified number
+                    localStorage.setItem('verifiedNumbers', JSON.stringify(verifiedNumbers)); // Update local storage
                 }
 
-                alert('Login successful!');
-                document.getElementById('loginSection').style.display = 'none';
-                document.getElementById('homeSection').style.display = 'block';
-                document.body.style.backgroundColor = '#141414';
+                alert('Login successful!'); // Alert for successful login
+                document.getElementById('loginSection').style.display = 'none'; // Hide login section
+                document.getElementById('homeSection').style.display = 'block'; // Show home section
+                document.body.style.backgroundColor = '#141414'; // Background color after login
             } else {
-                verificationMessage.textContent = 'Incorrect Code!';
+                verificationMessage.textContent = 'Incorrect Code!'; // Alert for incorrect code
             }
         });
 
+        // Handle movie request submission
         document.getElementById('submitRequest').addEventListener('click', function () {
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const movieTitle = document.getElementById('movieTitle').value;
 
             if (name && email && movieTitle) {
-                alert(`Thanks for submitting, ${name}!`);
+                alert(`Thanks for submitting, ${name}!`); // Thank you message
                 const mailtoLink = `mailto:1056521@lcps.org?subject=Movie%20Request%20from%20${encodeURIComponent(name)}&body=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0AMovie%20Title:%20${encodeURIComponent(movieTitle)}`;
-                window.location.href = mailtoLink;
-                document.getElementById('name').value = '';
-                document.getElementById('email').value = '';
-                document.getElementById('movieTitle').value = '';
+                window.location.href = mailtoLink; // Open mailto link
+                document.getElementById('name').value = ''; // Clear name input
+                document.getElementById('email').value = ''; // Clear email input
+                document.getElementById('movieTitle').value = ''; // Clear movie title input
             } else {
-                alert('Please fill in all fields before submitting.');
+                alert('Please fill in all fields before submitting.'); // Alert for empty fields
             }
         });
 
         // Collaborator request functionality
         document.getElementById('becomeCollaboratorBtn').addEventListener('click', function () {
-            document.getElementById('collaboratorRequestModal').style.display = 'flex';
+            document.getElementById('collaboratorRequestModal').style.display = 'flex'; // Show the modal
         });
 
         // Close the collaborator request modal
         document.getElementById('closeCollabRequestModal').addEventListener('click', function () {
-            document.getElementById('collaboratorRequestModal').style.display = 'none';
+            document.getElementById('collaboratorRequestModal').style.display = 'none'; // Hide the modal
         });
 
         // Submit the collaborator request
         document.getElementById('submitCollabRequest').addEventListener('click', function () {
-            const collabName = document.getElementById('collabName').value;
-            const collabEmail = document.getElementById('collabEmail').value;
-            const collabPhone = document.getElementById('collabPhone').value;
-            const collabWebsite = document.getElementById('collabWebsite').value;
-            const collabDescription = document.getElementById('collabDescription').value;
+            const collabName = document.getElementById('collabName').value; // Get collaborator name
+            const collabEmail = document.getElementById('collabEmail').value; // Get collaborator email
+            const collabPhone = document.getElementById('collabPhone').value; // Get collaborator phone
+            const collabWebsite = document.getElementById('collabWebsite').value; // Get collaborator website
+            const collabDescription = document.getElementById('collabDescription').value; // Get collaborator description
 
             if (collabName && collabEmail && collabPhone && collabWebsite && collabDescription) {
-                // Send email functionality (A real implementation would require back-end support)
                 const mailtoLink = `mailto:1056521@lcps.org?subject=Collaboration Request from ${encodeURIComponent(collabName)}&body=Name: ${encodeURIComponent(collabName)}%0AEmail: ${encodeURIComponent(collabEmail)}%0APhone: ${encodeURIComponent(collabPhone)}%0AWebsite: ${encodeURIComponent(collabWebsite)}%0ADescription: ${encodeURIComponent(collabDescription)}`;
-                window.location.href = mailtoLink;
+                window.location.href = mailtoLink; // Open mailto link
 
-                alert(`Thank you for your interest, ${collabName}!`);
+                alert(`Thank you for your interest, ${collabName}!`); // Thank you message
                 document.getElementById('collaboratorRequestModal').style.display = 'none'; // Close modal
             } else {
-                alert('Please fill in all fields before submitting your request.');
+                alert('Please fill in all fields before submitting your request.'); // Alert for empty fields
             }
         });
 
-        // Search functionality
+        // Search functionality for movies
         const searchBar = document.getElementById('searchBar');
         const searchResults = document.getElementById('searchResults');
 
+        // Listen for input in the search bar
         searchBar.addEventListener('input', function () {
-            const query = searchBar.value.toLowerCase();
+            const query = searchBar.value.toLowerCase(); // Get search term in lowercase
             searchResults.innerHTML = ''; // Clear previous results
 
-            const filteredMovies = movies.filter(movie => movie.title.toLowerCase().includes(query));
+            const filteredMovies = movies.filter(movie => movie.title.toLowerCase().includes(query)); // Filter movies by title
 
             if (query && filteredMovies.length > 0) {
                 filteredMovies.forEach(movie => {
                     const resultItem = document.createElement('div');
-                    resultItem.classList.add('search-result');
-                    resultItem.textContent = movie.title;
+                    resultItem.classList.add('search-result'); // Add search result class
+                    resultItem.textContent = movie.title; // Set the movie title
                     resultItem.addEventListener('click', function () {
-                        openMovieModal(movie.url);
-                        searchBar.value = '';
-                        searchResults.innerHTML = '';
-                        searchResults.style.display = 'none';
+                        openMovieModal(movie.url); // Open the movie in modal on click
+                        searchBar.value = ''; // Clear the search input
+                        searchResults.innerHTML = ''; // Clear results
+                        searchResults.style.display = 'none'; // Hide results after selection
                     });
-                    searchResults.appendChild(resultItem);
+                    searchResults.appendChild(resultItem); // Append result to the results container
                 });
-                searchResults.style.display = 'block';
+                searchResults.style.display = 'block'; // Show the results
             } else {
-                searchResults.style.display = 'none';
+                searchResults.style.display = 'none'; // Hide if no results
             }
         });
 
+        // Close search results when clicking outside
         document.addEventListener('click', function (event) {
             if (!searchBar.contains(event.target) && !searchResults.contains(event.target)) {
                 searchResults.style.display = 'none'; // Hide results when clicking outside
             }
         });
 
+        // Function to close all modals
         function closeAllModals() {
-            document.getElementById('myModal').style.display = "none";
-            document.getElementById('loginSection').style.display = "none";
-            document.getElementById('verificationForm').style.display = "none";
-            document.getElementById('collaboratorRequestModal').style.display = "none";
+            document.getElementById('myModal').style.display = "none"; // Close playback modal
+            document.getElementById('loginSection').style.display = "none"; // Hide login section
+            document.getElementById('verificationForm').style.display = "none"; // Hide verification form
+            document.getElementById('collaboratorRequestModal').style.display = "none"; // Close collaborator request modal
         }
 
+        // Auto-close welcome modal after a delay
         setTimeout(() => {
-            closeAllModals();
-            document.getElementById('welcomeModal').style.display = 'none';
-            document.getElementById('collaboratorsSection').style.display = 'block'; // Show collaborators section on load
-            document.getElementById('loginSection').style.display = 'flex'; // Show login section
+            closeAllModals(); // Ensure all modals are closed
+            document.getElementById('welcomeModal').style.display = 'none'; // Close the welcome modal
+            document.getElementById('loginSection').style.display = 'flex'; // Show the login section
         }, 5000); // 5 seconds delay
     </script>
 </body>
